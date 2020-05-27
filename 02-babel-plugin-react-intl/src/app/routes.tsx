@@ -3,6 +3,7 @@ import {Route, Switch} from 'react-router-dom'
 
 import {PageA, PageNoMatch} from 'pages/'
 import {Home} from 'pages/home/'
+import {PageB} from 'pages/page-b/'
 
 import {Users} from 'pages/users/'
 
@@ -16,6 +17,7 @@ const navigationDirective = [
 const Routes = () => (
   <Switch>
     <Route exact path="/" component={Home} />
+    <Route exact path="/b" component={PageB} />
     <Route exact path="/a">
       <PageA />
     </Route>

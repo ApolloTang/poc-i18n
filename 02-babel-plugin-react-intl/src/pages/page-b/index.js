@@ -1,16 +1,16 @@
 import React from 'react';
 import {FormattedMessage, FormattedDate} from 'react-intl';
 
-const Home = () => (
+const PageB = () => (
   <div>
-    <FormattedMessage id="app.content" defaultMessage="Learn React" />
+    <FormattedMessage id="pageb.content" defaultMessage="Learn React" />
     <FormattedMessage
-      id="app.channel.plug"
+      id="pageb.channel.plug"
       defaultMessage="Video brought to you by Coding with Chaim"
       values={{channelName: 'Coding with Chaim'}}
     />
     <FormattedMessage
-      id="app.header"
+      id="pageb.header"
       defaultMessage="Edit <my-tag>src/App.js</my-tag> js and save to reload."
       values={{
         fileName: 'src/App.js',
@@ -28,4 +28,4 @@ const Home = () => (
   </div>
 );
 
-export {Home};
+export {PageB};

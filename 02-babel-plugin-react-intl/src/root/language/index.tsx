@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
 import {IntlProvider} from 'react-intl'
 
-import Spanish from 'translation/es-MX.json'
-import English from 'translation/en-US.json'
+import Spanish from 'translations/es-MX.json'
+import English from 'translations/en-US.json'
 
 const local = 'es-MX' //navigator.language;
 // const local = navigator.language;
