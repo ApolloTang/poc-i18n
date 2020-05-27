@@ -1,9 +1,9 @@
-import React from 'react';
-import {BrowserRouter as Router} from 'react-router-dom';
+import React from 'react'
+import {BrowserRouter as Router} from 'react-router-dom'
 
-import App from 'app/';
-import {store} from './store';
-import {Provider} from 'react-redux';
+import App from 'app/'
+import {store} from './store'
+import {Provider} from 'react-redux'
 
 const Root = () => (
   <div className="root">
@@ -13,6 +13,6 @@ const Root = () => (
       </Router>
     </Provider>
   </div>
-);
+)
 
-export {Root};
+export {Root}

@@ -1,17 +1,17 @@
-import React from 'react';
-import {Route, Switch} from 'react-router-dom';
+import React from 'react'
+import {Route, Switch} from 'react-router-dom'
 
-import {PageA, PageNoMatch} from 'pages/';
-import {Home} from 'pages/home/';
+import {PageA, PageNoMatch} from 'pages/'
+import {Home} from 'pages/home/'
 
-import {Users} from 'pages/users/';
+import {Users} from 'pages/users/'
 
 const navigationDirective = [
   {to: '/', displayText: 'Home'},
   {to: '/a', displayText: 'PageA'},
   {to: '/users', displayText: 'Users'},
   {to: '/no-match', displayText: 'no-match'},
-];
+]
 
 const Routes = () => (
   <Switch>
@@ -26,6 +26,6 @@ const Routes = () => (
       <PageNoMatch />
     </Route>
   </Switch>
-);
+)
 
-export {Routes, navigationDirective};
+export {Routes, navigationDirective}

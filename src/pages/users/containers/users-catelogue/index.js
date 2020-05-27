@@ -1,9 +1,9 @@
-import React from 'react';
-import _get from 'lodash/get';
-import {connect} from 'react-redux';
-import {NavLink} from 'react-router-dom';
+import React from 'react'
+import _get from 'lodash/get'
+import {connect} from 'react-redux'
+import {NavLink} from 'react-router-dom'
 
-import {mapStoreToProps, mapDispatchToProps} from './selector';
+import {mapStoreToProps, mapDispatchToProps} from './selector'
 
 const UserItem = ({displayName, id, id_selectedUser}) => (
   <div className={id === id_selectedUser ? 'is-active' : ''}>
@@ -11,14 +11,14 @@ const UserItem = ({displayName, id, id_selectedUser}) => (
       {displayName}
     </NavLink>
   </div>
-);
+)
 
 const UserList = ({userCatelog, id_selectedUser}) => {
-  const ids = Object.keys(userCatelog);
+  const ids = Object.keys(userCatelog)
   return (
     <div>
       {ids.map(id => {
-        const displayName = _get(userCatelog, `${id}.name`, '');
+        const displayName = _get(userCatelog, `${id}.name`, '')
         return (
           <UserItem
             key={id}
@@ -26,22 +26,22 @@ const UserList = ({userCatelog, id_selectedUser}) => {
             id={id}
             displayName={displayName}
           />
-        );
+        )
       })}
     </div>
-  );
-};
+  )
+}
 
 const Catalog = props => {
   React.useEffect(() => {
-    props.dispatch_init();
-    props.dispatch_fetchUserCatelog();
+    props.dispatch_init()
+    props.dispatch_fetchUserCatelog()
     return () => {
-      console.log('Dialogue unmounted, will cancel fetch data');
-    };
-  }, []);
+      console.log('Dialogue unmounted, will cancel fetch data')
+    }
+  }, [])
 
-  const userIdInParam = _get(props, 'match.params.userId', 21323);
+  const userIdInParam = _get(props, 'match.params.userId', 21323)
   return props.isLoading ? (
     <div>...loading</div>
   ) : (
@@ -51,12 +51,9 @@ const Catalog = props => {
         userCatelog={props.userCatelogue}
       />
     </div>
-  );
-};
+  )
+}
 
-const connectedComponent = connect(
-  mapStoreToProps,
-  mapDispatchToProps,
-)(Catalog);
+const connectedComponent = connect(mapStoreToProps, mapDispatchToProps)(Catalog)
 
-export {connectedComponent as UsersCatelogue};
+export {connectedComponent as UsersCatelogue}

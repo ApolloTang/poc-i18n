@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
 
-import {NavLink} from 'react-router-dom';
+import {NavLink} from 'react-router-dom'
 
 const ModuleRoot = ({navigations}) => (
   <div className={`simple-navigation`}>
@@ -15,6 +15,6 @@ const ModuleRoot = ({navigations}) => (
       ))}
     </ul>
   </div>
-);
+)
 
-export default ModuleRoot;
+export default ModuleRoot

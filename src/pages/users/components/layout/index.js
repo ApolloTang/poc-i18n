@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const PageLayout = ({UsersCatelog, WorkspaceControl, Workspace}) => {
   return (
@@ -7,7 +7,7 @@ const PageLayout = ({UsersCatelog, WorkspaceControl, Workspace}) => {
       {WorkspaceControl}
       {Workspace}
     </div>
-  );
-};
+  )
+}
 
-export {PageLayout as UsersPageLayout};
+export {PageLayout as UsersPageLayout}

@@ -1,12 +1,12 @@
-import React from 'react';
-import {Route, Switch} from 'react-router-dom';
+import React from 'react'
+import {Route, Switch} from 'react-router-dom'
 
-import {PageNoMatch} from 'pages/';
+import {PageNoMatch} from 'pages/'
 
-import {UserDetails} from 'pages/users/containers/user-details/';
+import {UserDetails} from 'pages/users/containers/user-details/'
 
-const UserNew = () => <div>UserNew </div>;
-const UserEdit = () => <div>UserEdit </div>;
+const UserNew = () => <div>UserNew </div>
+const UserEdit = () => <div>UserEdit </div>
 
 const Routes = () => (
   <Switch>
@@ -24,6 +24,6 @@ const Routes = () => (
       <PageNoMatch />
     </Route>
   </Switch>
-);
+)
 
-export {Routes};
+export {Routes}

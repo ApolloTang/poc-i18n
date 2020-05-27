@@ -25,6 +25,6 @@ const handleError = () => (/* fetchError */) => {
   // } else {
   //   console.error(xhr.responseText);
   // }
-};
+}
 
-export default handleError;
+export default handleError

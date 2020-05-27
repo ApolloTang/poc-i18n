@@ -1,1 +1,1 @@
-export {default as createHttp} from './createHttp';
+export {default as createHttp} from './createHttp'
