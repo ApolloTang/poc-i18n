@@ -29,7 +29,7 @@ const Language = (props: {children: React.ReactNode}) => {
   function selectLang(e:React.ChangeEvent<HTMLSelectElement>) {
     const newLocale = e.target.value
     setLocale(newLocale)
-    if (newLocale === 'ex-MX') {
+    if (newLocale === 'es-MX') {
       setMessage(Spanish)
     } else {
       setMessage(English)
