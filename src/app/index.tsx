@@ -6,10 +6,10 @@ import {Routes, navigationDirective} from './routes';
 import Spanish from '../languages/es-MX.json';
 import English from '../languages/en-US.json';
 
-const local = navigator.language;
+const local = 'es-MX' //navigator.language;
 
 let lang = English;
-if (local === 'en-MX') {
+if (local === 'es-MX') {
   lang = Spanish
 }
 
