@@ -9,6 +9,11 @@ const Home = () => (
       defaultMessage="Video brought to you by Coding with Chaim"
       values={{channelName: 'Coding with Chaim'}}
     />
+    <FormattedMessage
+      id="app.header"
+      defaultMessage="Edit <code>src/App.js</code> js and save to reload."
+      values={{fileName: 'src/App.js', 'my-tag': (fileName) =>  <strong>{fileName}</strong>}}
+    />
   </div>
 );
 
