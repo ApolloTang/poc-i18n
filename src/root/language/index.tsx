@@ -14,7 +14,7 @@ if (local === 'es-MX') {
 
 type LangContextType = {
   locale: string
-  selectLang: (e:React.ChangeEvent<HTMLSelectElement>) => undefined
+  selectLang: (e:React.ChangeEvent<HTMLSelectElement>) => void
 }
 
 const LangContext = React.createContext<LangContextType>({
@@ -26,7 +26,7 @@ const Language = (props: {children: React.ReactNode}) => {
   const [locale, setLocale] = useState(local)
   const [message, setMessage] = useState(lang)
 
-  function selectLang(e) {
+  function selectLang(e:React.ChangeEvent<HTMLSelectElement>) {
     const newLocale = e.target.value
     setLocale(newLocale)
     if (newLocale === 'ex-MX') {
