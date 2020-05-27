@@ -1,8 +1,10 @@
 # react app
 
-React-Intl | Internalization Basics in React by Coding With Chaim
+experimenting with:
 
-[https://www.youtube.com/watch?v=YrWRxs-lqj4](https://www.youtube.com/watch?v=YrWRxs-lqj4)
+[babel-plugin-react-intl](https://formatjs.io/docs/tooling/babel-plugin)
+
+[https://github.com/GertjanReynaert/react-intl-translations-manager](https://github.com/GertjanReynaert/react-intl-translations-manager)
 
 Install:
 ```
