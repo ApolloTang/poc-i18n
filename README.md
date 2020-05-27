@@ -1,5 +1,9 @@
 # react app
 
+React-Intl | Internalization Basics in React by Coding With Chaim
+
+[https://www.youtube.com/watch?v=YrWRxs-lqj4](https://www.youtube.com/watch?v=YrWRxs-lqj4)
+
 Install:
 ```
 $ yarn ## install
