@@ -1,21 +1,18 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import SimpleNavigation from 'common/components/core/simple-navigation'
-import {IntlProvider} from 'react-intl'
 
 import {Routes, navigationDirective} from './routes'
-import Spanish from '../languages/es-MX.json'
-import English from '../languages/en-US.json'
+import {LangContext, LangContextType} from 'root/language/'
 
-const local = 'es-MX' //navigator.language;
+const App = () => {
+  const langContext:LangContextType = useContext(LangContext)
 
-let lang = English
-if (local === 'es-MX') {
-  lang = Spanish
-}
-
-const App = () => (
-  <IntlProvider locale={local} messages={lang}>
+  return (
     <div className="app">
+      <select value={langContext.locale} onChange={langContext.selectLang} >
+        <option value="en-US">English</option>
+        <option value="es-MX">Spanish</option>
+      </select>
       <div className="app-navigation-container">
         <SimpleNavigation navigations={navigationDirective} />
       </div>
@@ -23,7 +20,7 @@ const App = () => (
         <Routes />
       </div>
     </div>
-  </IntlProvider>
-)
+  )
+}
 
 export default App
