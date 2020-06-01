@@ -1,6 +1,11 @@
+/* eslint-disable */
+// core-js@3 does not polyfill Object.assign so we have to
+// polyfill it manually
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
 if (typeof Object.assign !== 'function') {
   // Must be writable: true, enumerable: false, configurable: true
   Object.defineProperty(Object, 'assign', {
+    // @ts-ignore
     value: function assign(target, varArgs) {
       // .length of function is 2
       'use strict'
@@ -28,6 +33,7 @@ if (typeof Object.assign !== 'function') {
     configurable: true,
   })
 }
+/* eslint- enable */
 
 import React from 'react'
 import ReactDom from 'react-dom'
