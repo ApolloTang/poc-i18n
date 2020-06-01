@@ -1,39 +1,7 @@
-/* eslint-disable */
-// core-js@3 does not polyfill Object.assign so we have to
-// polyfill it manually
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
-if (typeof Object.assign !== 'function') {
-  // Must be writable: true, enumerable: false, configurable: true
-  Object.defineProperty(Object, 'assign', {
-    // @ts-ignore
-    value: function assign(target, varArgs) {
-      // .length of function is 2
-      'use strict'
-      if (target === null || target === undefined) {
-        throw new TypeError('Cannot convert undefined or null to object')
-      }
-
-      var to = Object(target)
-
-      for (var index = 1; index < arguments.length; index++) {
-        var nextSource = arguments[index]
-
-        if (nextSource !== null && nextSource !== undefined) {
-          for (var nextKey in nextSource) {
-            // Avoid bugs when hasOwnProperty is shadowed
-            if (Object.prototype.hasOwnProperty.call(nextSource, nextKey)) {
-              to[nextKey] = nextSource[nextKey]
-            }
-          }
-        }
-      }
-      return to
-    },
-    writable: true,
-    configurable: true,
-  })
-}
-/* eslint- enable */
+// core-js@3 does not polyfill Object.assign in some situation
+// so we have to import manually
+// https://github.com/zloirock/core-js/issues/639
+import 'core-js/features/object/assign'
 
 import React from 'react'
 import ReactDom from 'react-dom'
