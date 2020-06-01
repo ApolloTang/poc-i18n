@@ -1,6 +1,10 @@
 import React from 'react';
 import {FormattedMessage, FormattedDate} from 'react-intl';
 
+import '@formatjs/intl-getcanonicallocales/polyfill';
+import '@formatjs/intl-pluralrules/polyfill';
+import '@formatjs/intl-pluralrules/dist/locale-data/en';
+
 const selectOne = new Intl.PluralRules('en-US').select(0);
 console.log('xxx selectOne', selectOne)
 
@@ -29,7 +33,6 @@ const Home = () => (
       weekday="long"
     />
 
-    <p>selectOne: {selectOne}</p>
   </div>
 );
 

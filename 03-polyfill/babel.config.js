@@ -10,13 +10,13 @@ module.exports = api => {
     [
       '@babel/preset-env',
       {
-        debug: false,
+        debug: true,
         targets: {ie: '11'},
         useBuiltIns: 'usage',
-        // 'corejs': 3,  // dynamic import is broken:
+        'corejs': 3,  // dynamic import is broken:
         // https://github.com/babel/babel/issues/9872
         // so we will use corejs@2 instead
-        corejs: 2,
+        //corejs: 2,
         modules: isTest ? 'commonjs' : false,
       },
     ],
