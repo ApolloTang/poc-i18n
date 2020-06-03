@@ -2,7 +2,7 @@
 // so we have to import manually
 // https://github.com/zloirock/core-js/issues/639
 if (!Object.assign) {
-  import('core-js/features/object/assign');
+  void import('core-js/features/object/assign');
 }
 
 import React from 'react'
@@ -25,7 +25,7 @@ const runApp = () => {
 }
 
 if(!window.Intl.PluralRules) {
-  Promise.all<void>([
+  void Promise.all([
     import('@formatjs/intl-getcanonicallocales/polyfill'),
     import('@formatjs/intl-pluralrules/polyfill'),
     import('@formatjs/intl-pluralrules/dist/locale-data/en'),
@@ -34,7 +34,6 @@ if(!window.Intl.PluralRules) {
     import('@formatjs/intl-relativetimeformat/polyfill'),
     import('@formatjs/intl-relativetimeformat/dist/locale-data/en'),
     import('@formatjs/intl-relativetimeformat/dist/locale-data/es'),
-
   ]).then(() => {
     runApp()
   })
