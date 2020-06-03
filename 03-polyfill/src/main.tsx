@@ -1,7 +1,9 @@
 // core-js@3 does not polyfill Object.assign in some situation
 // so we have to import manually
 // https://github.com/zloirock/core-js/issues/639
-import 'core-js/features/object/assign'
+if (!Object.assign) {
+  import('core-js/features/object/assign');
+}
 
 import React from 'react'
 import ReactDom from 'react-dom'
