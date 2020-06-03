@@ -2,6 +2,7 @@
 // so we have to import manually
 // https://github.com/zloirock/core-js/issues/639
 if (!Object.assign) {
+  // @ts-ignore
   void import('core-js/features/object/assign');
 }
 
@@ -26,14 +27,22 @@ const runApp = () => {
 
 if(!window.Intl.PluralRules) {
   void Promise.all([
+    // @ts-ignore
     import('@formatjs/intl-getcanonicallocales/polyfill'),
+    // @ts-ignore
     import('@formatjs/intl-pluralrules/polyfill'),
+    // @ts-ignore
     import('@formatjs/intl-pluralrules/dist/locale-data/en'),
+    // @ts-ignore
     import('@formatjs/intl-pluralrules/dist/locale-data/es'),
 
+    // @ts-ignore
     import('@formatjs/intl-relativetimeformat/polyfill'),
+    // @ts-ignore
     import('@formatjs/intl-relativetimeformat/dist/locale-data/en'),
+    // @ts-ignore
     import('@formatjs/intl-relativetimeformat/dist/locale-data/es'),
+    // @ts-ignore
   ]).then(() => {
     runApp()
   })
