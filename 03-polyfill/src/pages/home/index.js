@@ -1,14 +1,20 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {FormattedMessage, FormattedDate} from 'react-intl';
+import {LangContext, LangContextType} from 'root/language/'
 
-import '@formatjs/intl-getcanonicallocales/polyfill';
-import '@formatjs/intl-pluralrules/polyfill';
-import '@formatjs/intl-pluralrules/dist/locale-data/en';
+const Home = () => {
+  const langContext = useContext(LangContext)
+  const locale = langContext.locale
 
-const selectOne = new Intl.PluralRules('en-US').select(0);
-console.log('xxx selectOne', selectOne)
+  const rtf = new Intl.RelativeTimeFormat(locale, {
+      localeMatcher: "best fit", // other values: "lookup"
+      numeric: "always", // other values: "auto"
+      style: "long", // other values: "short" or "narrow"
+  });
 
-const Home = () => (
+  const amount = new Intl.PluralRules(locale, { type: 'ordinal' }).select(2)
+
+  return (
   <div>
     <FormattedMessage id="app.content" defaultMessage="Learn React" />
     <FormattedMessage
@@ -32,8 +38,10 @@ const Home = () => (
       day="numeric"
       weekday="long"
     />
-
+    <h1>{ amount }</h1>
+    <h1>{ rtf.format(-1, "day") }</h1>
   </div>
 );
 
+}
 export {Home};

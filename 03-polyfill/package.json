@@ -58,8 +58,11 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "@formatjs/intl-displaynames": "^2.2.1",
     "@formatjs/intl-getcanonicallocales": "^1.2.4",
+    "@formatjs/intl-numberformat": "^4.2.1",
     "@formatjs/intl-pluralrules": "^2.2.1",
+    "@formatjs/intl-relativetimeformat": "^5.2.1",
     "core-js": "^3.6.5",
     "express": "^4.17.1",
     "isomorphic-fetch": "^2.2.1",

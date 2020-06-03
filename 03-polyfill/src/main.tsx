@@ -17,5 +17,26 @@ console.log(
   process.env.ENABLE_REDUX_LOGGER,
 )
 
-const appContainer = document.getElementById('app-container')
-ReactDom.render(<Root />, appContainer)
+const runApp = () => {
+  const appContainer = document.getElementById('app-container')
+  ReactDom.render(<Root />, appContainer)
+}
+
+if(!window.Intl.PluralRules) {
+  Promise.all<void>([
+    import('@formatjs/intl-getcanonicallocales/polyfill'),
+    import('@formatjs/intl-pluralrules/polyfill'),
+    import('@formatjs/intl-pluralrules/dist/locale-data/en'),
+    import('@formatjs/intl-pluralrules/dist/locale-data/es'),
+
+    import('@formatjs/intl-relativetimeformat/polyfill'),
+    import('@formatjs/intl-relativetimeformat/dist/locale-data/en'),
+    import('@formatjs/intl-relativetimeformat/dist/locale-data/es'),
+
+  ]).then(() => {
+    runApp()
+  })
+} else {
+  runApp()
+}
+
